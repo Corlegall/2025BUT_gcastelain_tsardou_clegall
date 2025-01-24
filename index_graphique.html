@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Baguette - Inflation</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="Bulma.css">
+    <link rel="stylesheet" href="chrnonometre.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <img class="logo" src="img/logo.png" alt="">
+        <h3 class="baguette">Universal Baguette</h3>
+    </nav>
+    <section class="section">
+        <div class="container">
+            <!-- Navigation Onglets -->
+            <div id="onglets" class="buttons has-text-centered is-justify-content-center mb-5">
+                <button id="show-graphic" class="  mr-6">Graphique</button>
+                <button id="show-game" class="  ml-6">Jeu interactif</button>
+                <span class="slider"></span>
+            </div>
+
+            <!-- Partie Graphique -->
+            <div id="graphic-section" class="box">
+                <h2 id="titre" class="subtitle is-4">Taux d'inflation en France (1991 à 2023)</h2>
+                <div class="columns">
+                    <div class="column is-8">
+                        <canvas id="lineChart" width="1100" height="600"></canvas>
+                    </div>
+                    <div class="column is-4">
+                        <div class="field">
+                            <label class="label">Paramétrage</label>
+                            <div class="control">
+                                <input id="startYear" class="input" type="number" placeholder="Début de la période"
+                                    min="1991" max="2022">
+                            </div>
+                            <div class="control mt-2">
+                                <input id="endYear" class="input" type="number" placeholder="Fin de la période"
+                                    min="1992" max="2023">
+                            </div>
+                            <button id="updateChart" class="button is-primary mt-3">Appliquer la recherche</button>
+                            <button id="restartChart" class="button is-primary mt-6">Renouveler le graphique</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jeu interactif -->
+            <div class="chronometre" id="chrono">
+                <div class="time" id="time">00:00:00</div>
+                <div class="buttons">
+                    <button id="stop" class="button">Stop</button>
+                    <button id="reset" class="button">Reset</button>
+                </div>
+            </div>
+            <div id="game-section" class="box">
+
+
+                <div id="start-section">
+                    <h3 class="titre-jeu">Jeu interactif</h3>
+                    <p class="has-text-centered">Le but de ce jeu est de deviner le cour de l'évolution de l'inflation en France via une courbe qui se déssinera au fur et à mesure de vos réponses. <br> Si vous penssez qu'elle va augmenter appuyez sur la flèche vers le haut et inversement. <br>
+                    Vos réponses influront sur votre score final.</p>
+                    <div class="has-text-centered mt-4">
+                        <button id="start-button" class="button is-success">Commencer</button>
+                    </div>
+                </div>
+
+                <div id="play-section">
+                    <div class="columns is-vcentered">
+                        <div class="column is-8">
+                            <canvas id="lineChart2" width="1100" height="600"></canvas>
+                        </div>
+                        <div id="interface-jeu" class="column is-4">
+                            <div class="box has-text-centered">
+                                <p><span class="highlight">Point Universal Baguette</span></p>
+                                <p id="points">0</p>
+                            </div>
+                            <div class="game-buttons has-text-centered mt-4">
+                                <button id="upButton" class="button is-primary">⬆️</button>
+                                <button id="downButton" class="button is-primary">⬇️</button>
+                            </div>
+                            <div class="gain-box has-text-centered mt-4">
+                                <p><span class="highlight">Porte monnaie</span></p>
+                                <p id="gain-perte">500</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="donne" class="fixed-grid has-3-cols ">
+        <div class="grid ">
+            <div class="cell has-text-centered has-text-weight-bold is-col-span-3">
+                <div class="content_titre">
+                    LE TEMPS EST VENU <br> DE FAIRE LES COMPTES
+                </div>
+            </div>
+
+            <div class="cell has-text-centered">
+                <div class="card m-3 mx-6">
+                    <figure class="gato">
+                        <img src="img/Vector.png" alt="icon">
+                    </figure>
+
+                    <div class="card-content">
+                        <div class="content">
+                            <h2 class="has-text-weight-bold">11 ans</h2>
+                            11 années passées au dessus<br> du seuil des 2% de taux d’inflations
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cell has-text-centered">
+                <div class="card m-3 mx-6">
+                    <div class="card-content">
+                        <div class="content">
+                            <h2 class="has-text-weight-bold">Un record</h2>
+                            L’année 2022 signe le record du <br>taux d’inflation avec 5.2%
+                        </div>
+                        <figure class="image-medaille">
+                            <img class="gato" src="img/Vectormédaille.png" alt="icon">
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="cell has-text-centered">
+                <div class="card m-3 mx-6">
+                    <figure class="pensement">
+                        <img src="img/adhesive-plaster-2-svgrepo-com.png" alt="icon">
+                    </figure>
+
+                    <div class="card-content">
+                        <div class="content">
+                            <h2 class="has-text-weight-bold">Un espoir</h2>
+                            Poursuivre le début de descente <br>de la courbe.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="poster-desciption">
+            <img class="poster" src="img/Corentin LE GALL Gabin Castelain Thibault SAROU BUT MMI 2B1 Poster Datalogy(1).jpg">
+
+            <div class="description">
+
+                <h2 class="des">Description</h2>
+                <p>Ce projet vise à constater l’inflation en France entre 1996 et 2022 <br>
+                    à travers une visualisation des données provenant du site internet Statista. <br>
+                    L’objectif principal est de rendre les informations accessibles <br>
+                    et compréhensibles pour le grand public, afin d’informer la population <br>
+                    sur les variations importantes du taux d’inflation français.<br>
+                    Pour représenter ces chiffres qui comptent beaucoup aux yeux des français,<br> 
+                    nous avons choisi d’utiliser le pain, symbole gastronomique de notre pays mais également économique. <br>
+                    <br>
+                    La raison de ce choix est donc de faire ressentir<br>
+                    un sentiment d'appartenance et de nostalgie aux personnes qui découvriront notre datalogy.<br>
+                    Pour représenter les données, nous avons opté pour une vue découpée de ce pain en fonction <br>
+                    des variations du taux d’inflation afin d’interpeller le lecteur notamment via la<br>
+                    dernière partie du pain mis en miette pour représenter le pic de l’inflation.<br>
+                    Ce choix à été choisi pour sa capacité à transmettre les informations voulues de manière<br>
+                    intuitive en quelques secondes.<br>
+                </p>
+                <br>
+
+                <h2 class="des">Définition</h2>
+
+                <p class="eco">
+                L'inflation est la perte du pouvoir d'achat de la monnaie qui se traduit par une augmentation générale et durable des prix.<br>
+                Elle doit être distinguée de l'augmentation du coût de la vie. <br>
+                La perte de valeur de la monnaie est un phénomène qui frappe l'économie nationale dans son ensemble (ménages, entreprises, etc.).<br>
+                L’indice des prix à la consommation (IPC) est utilisé pour évaluer l’inflation.<br>
+                Cette mesure est partielle étant donné que l’inflation couvre un champ plus large que celui de la seule consommation des ménages.<br><br>
+                </p>
+
+                <p class="INSEE">INSEE</p>
+
+            </div>
+
+        </div>
+       
+    </div>
+    <footer>
+        Créer par Thibault SARDOU, Corentin LE GALL et Gabin CASTELAIN
+    </footer>
+
+
+    <script src="graphique-jeu.js"></script>
+    <script src="outils.js"></script>
+</body>
+
+
+</html>

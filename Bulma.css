@@ -1,0 +1,215 @@
+body {
+    background-color: #FFFFFF;
+    color: #001F3F !important;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    color: #001F3F !important;
+}
+
+h1{
+    display: flex;
+    width: 30%;
+}
+
+h1, h2, h4, h5, h6, p, span, label{
+    color: #001F3F !important;
+}
+
+.box {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 8px;
+}
+
+#onglets{
+    margin-top: 50px;
+    font-weight: bold;
+    position: relative;
+}
+
+.slider{
+    position: absolute;
+    background-color: #FFD166;
+    width: 100px;
+    height: 15%;
+    margin-top: 30px;
+    left: 520px;
+    border-radius: 3px;
+    transition: 0.5s ease;
+
+}
+
+
+.graph{
+    display: flex;
+    width: 10%;
+}
+
+.input{
+    background-color: white;
+    color: #000000;
+}
+
+.input::placeholder{
+    color: #000000;
+}
+
+.highlight {
+    color: #000000;
+    font-weight: bold;
+}
+
+.gain-box {
+    background-color: #ffffff;
+    color: #001F3F !important;
+    border-radius: 8px;
+    font-size: 1.2em;
+    padding: 1em;
+    border: 2px solid #000000;
+}
+
+.game-buttons button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    margin: 5px;
+}
+
+.field {
+    background-color: #FFFFFF;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.is-primary {
+    background-color: #001F3F !important;
+    color: #FFFFFF !important;
+}
+
+.is-link {
+    background-color: #001F3F !important;
+    color: #FFFFFF !important;
+}
+
+.is-success {
+    background-color: #001F3F !important;
+    color: #FFFFFF !important;
+}
+
+.pensement{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    justify-content: end;
+    right: 0;
+}
+
+.gato{
+    height: 80px;
+    width: 80px;
+    display: flex;
+padding: 10px;
+    position: absolute;
+
+}
+
+.image-medaille{
+
+    display: flex;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    right: 0;
+
+}
+
+.img{
+height: 55px;
+}
+
+
+.card{
+    background-color: #FEFEFE;
+}
+
+.grid{
+    background-color: #073B4C;
+    width: 100%;
+}
+
+.content_titre{
+    font-size: 2.5rem;
+    color: #FFD166;
+    font-family: "Lilita One", serif;
+    padding-top: 35px;
+
+}
+.content{
+    color:#073B4C
+}
+
+#graphic-section {
+    display: block;
+    margin-top: 100px;
+}
+
+#game-section {
+    display: none;
+}
+
+#chrono{
+    display: none;
+    margin-top: 70px;
+}
+
+
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    header .title {
+        font-size: 1.5em;
+    }
+
+    header .subtitle {
+        font-size: 1em;
+    }
+
+    .slider{
+        display: none;
+    }
+}
+
+.controle{
+    background-color: #FFFFFF;
+}
+
+footer{
+    background-color: #073B4C;
+    color: white;
+    display: flex;
+    padding: 10px;
+    justify-content: flex-end;
+}
+.poster{
+border-radius: 30px;
+
+max-height: 800px;
+
+}
+
+.poster-desciption{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.des{
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+    font-size: 30px;
+}
